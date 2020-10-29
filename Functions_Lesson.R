@@ -10,5 +10,5 @@ myplot <- function(x, y, type = "l", ...) {
   #the same ... can be used at the begin to indicate "lot of arguments before this"
 }
 
-
+#andiamo avanti 
 
