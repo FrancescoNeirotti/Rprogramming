@@ -80,8 +80,39 @@ tapply(x, f, mean) #applica mean al vettore x agli indici f
 
 ## SPLIT ---------------------------------------------------------
 
+#split a vector and apply fucntion to pieces
+str(split)
 
 
+split(x, f)
+
+#f ha tre livelli, quindi divide in 3 e fa l'operazione
+
+lapply(split(x, f), mean) #posso combinare: splitto, applico mean a tutti con lappy
+
+library(datasets)
+head(airquality)
+
+s <- split(airquality, airquality$Month)
+
+lapply(s, function(x) colMeans(x[, c("Ozone", "Solar.R", "Wind")]))
+
+sapply(s, function(x) colMeans(x[, c("Ozone", "Solar.R", "Wind")], na.rm = TRUE))
+
+#splitting in more then one level
+
+x <- rnorm(10)
+f1 <- gl(2,5)
+f2 <- gl(5,2)
+
+interaction(f1,f2)
+
+str(split(x, list(f1,f2)))
+
+
+
+
+str(split(x, list(f1,f2), drop = TRUE)) #elimino i livelli vuoti
 
 
 
