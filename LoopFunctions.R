@@ -50,6 +50,50 @@ rowMeans(a, dims = 2)
 
 ## MAPPLY ----------------------------------------------------------
 
+#apply a function to multiple arguments (mutiple list for example)
+str(mapply)
+
+list(rep(1, 4), rep(2, 3), rep(3, 2), rep(4, 1))
+
+#can do
+
+mapply(rep, 1:4, 4:1)
+
+
+noise <- function(n, mean, sd) {
+  rnorm(n, mean, sd)
+}
+
+noise(5,1,2)
+
+mapply(noise, 1:5, 1:5, 2)
+
+## TAPPLY -------------------------------------------------------
+
+#appòy a function over subset of a vector.
+str(tapply)
+
+x <- c(rnorm(10), runif(10), rnorm(10,1))
+f <- gl(3,10)
+
+tapply(x, f, mean) #applica mean al vettore x agli indici f
+
+## SPLIT ---------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
