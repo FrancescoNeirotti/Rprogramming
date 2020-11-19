@@ -26,5 +26,3 @@ myjson <- toJSON(iris, pretty = T)
 cat(myjson)
 
 iris2 <- fromJSON(myjson)
-
-head(iris2)
